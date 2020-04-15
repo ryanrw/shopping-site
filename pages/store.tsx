@@ -48,8 +48,12 @@ const StorePage = () => {
       {nintendoCart > 0 && <p>Nintendo: {nintendoCart}</p>}
       {ps4Cart > 0 && <p>Playstation 4: {ps4Cart}</p>}
 
-      {(nintendoCart > 0 || ps4Cart > 0) && (
+      {nintendoCart > 0 || ps4Cart > 0 ? (
         <button onClick={() => confirmAndReset()}>สั่งซื้อ</button>
+      ) : (
+        <div>
+          <i>ไม่มีสินค้า</i>
+        </div>
       )}
     </div>
   )
